@@ -9,9 +9,21 @@ namespace FirstMVC.Controllers
 {
     public class CustomersController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public CustomersController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         public ViewResult Index()
         {
-            var customers = GetCustomers();
+            var customers = _context.Customers;
 
             return View(customers);
         }

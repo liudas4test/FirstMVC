@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -224,6 +225,22 @@
     <Compile Include="Migrations\201712220007430_AddNamesToMembershipTypes.Designer.cs">
       <DependentUpon>201712220007430_AddNamesToMembershipTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712252004222_AddedBirthDateToTheCustomer.cs" />
+    <Compile Include="Migrations\201712252004222_AddedBirthDateToTheCustomer.Designer.cs">
+      <DependentUpon>201712252004222_AddedBirthDateToTheCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712252046528_AddedBirthDateToTheCustomer1.cs" />
+    <Compile Include="Migrations\201712252046528_AddedBirthDateToTheCustomer1.Designer.cs">
+      <DependentUpon>201712252046528_AddedBirthDateToTheCustomer1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712252123092_AddingMoviesTable.cs" />
+    <Compile Include="Migrations\201712252123092_AddingMoviesTable.Designer.cs">
+      <DependentUpon>201712252123092_AddingMoviesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712252134177_PopulateMoviesTable.cs" />
+    <Compile Include="Migrations\201712252134177_PopulateMoviesTable.Designer.cs">
+      <DependentUpon>201712252134177_PopulateMoviesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -337,6 +354,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712220007430_AddNamesToMembershipTypes.resx">
       <DependentUpon>201712220007430_AddNamesToMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712252004222_AddedBirthDateToTheCustomer.resx">
+      <DependentUpon>201712252004222_AddedBirthDateToTheCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712252046528_AddedBirthDateToTheCustomer1.resx">
+      <DependentUpon>201712252046528_AddedBirthDateToTheCustomer1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712252123092_AddingMoviesTable.resx">
+      <DependentUpon>201712252123092_AddingMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712252134177_PopulateMoviesTable.resx">
+      <DependentUpon>201712252134177_PopulateMoviesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

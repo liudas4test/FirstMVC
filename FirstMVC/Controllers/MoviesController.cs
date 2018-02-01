@@ -39,6 +39,11 @@ namespace FirstMVC.Controllers
             return View(movie);
         }
 
+        public ActionResult New()
+        {
+            return View();
+        }
+
         /*private IEnumerable<Movie> GetMovies()
         {
             return new List<Movie>

@@ -26,14 +26,14 @@ namespace FirstMVC.Controllers
 
         public ViewResult Index()
         {
-            var movies = _context.Movies.ToList();
+            var movies = _context.Movies.Include(c => c.MovieGenre).ToList();
 
             return View(movies);    
         }
 
         public ActionResult Details(int id)
         {
-            var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
+            var movie = _context.Movies.Include(c => c.MovieGenre).SingleOrDefault(c => c.Id == id);
             if (movie == null)
                 return HttpNotFound();
             return View(movie);

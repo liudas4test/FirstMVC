@@ -12,8 +12,6 @@ namespace FirstMVC.Models
         [Required]
         public string Name { get; set; }
         [Required]
-        public string Genre { get; set; }
-        [Required]
         [Display(Name = "Release date")]
         public DateTime ReleaseDate { get; set; }
         [Required]
@@ -21,5 +19,9 @@ namespace FirstMVC.Models
         public DateTime DateAdded { get; set; }
         [Required]
         public int InStock { get; set; }
+
+        [Required]
+        public MovieGenre MovieGenre { get; set; }
+        public int MovieGenreId { get; set; }
     }
 }

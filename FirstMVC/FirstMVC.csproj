@@ -241,6 +241,22 @@
     <Compile Include="Migrations\201712252134177_PopulateMoviesTable.Designer.cs">
       <DependentUpon>201712252134177_PopulateMoviesTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802011542023_changedMoviesModelandMoviesGenre.cs" />
+    <Compile Include="Migrations\201802011542023_changedMoviesModelandMoviesGenre.Designer.cs">
+      <DependentUpon>201802011542023_changedMoviesModelandMoviesGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802011547501_addingMoviesGenreToDB.cs" />
+    <Compile Include="Migrations\201802011547501_addingMoviesGenreToDB.Designer.cs">
+      <DependentUpon>201802011547501_addingMoviesGenreToDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802011633015_PopulateMovieGenres.cs" />
+    <Compile Include="Migrations\201802011633015_PopulateMovieGenres.Designer.cs">
+      <DependentUpon>201802011633015_PopulateMovieGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802011645539_PopulateMoviesList.cs" />
+    <Compile Include="Migrations\201802011645539_PopulateMoviesList.Designer.cs">
+      <DependentUpon>201802011645539_PopulateMoviesList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -372,6 +388,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712252134177_PopulateMoviesTable.resx">
       <DependentUpon>201712252134177_PopulateMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802011542023_changedMoviesModelandMoviesGenre.resx">
+      <DependentUpon>201802011542023_changedMoviesModelandMoviesGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802011547501_addingMoviesGenreToDB.resx">
+      <DependentUpon>201802011547501_addingMoviesGenreToDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802011633015_PopulateMovieGenres.resx">
+      <DependentUpon>201802011633015_PopulateMovieGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802011645539_PopulateMoviesList.resx">
+      <DependentUpon>201802011645539_PopulateMoviesList.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

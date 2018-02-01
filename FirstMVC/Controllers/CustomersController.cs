@@ -82,13 +82,6 @@ namespace FirstMVC.Controllers
             return View("CustomerForm", viewModel);
         }
 
-        /*private IEnumerable<Customer> GetCustomers()
-        {
-            return new List<Customer>
-            {
-                new Customer { Id = 1, Name = "First Customer" },
-                new Customer { Id = 2, Name = "Second Customer" }
-            };
-        }*/
+        
     }
 } 

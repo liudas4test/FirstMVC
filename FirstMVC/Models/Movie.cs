@@ -20,8 +20,9 @@ namespace FirstMVC.Models
         [Required]
         public int InStock { get; set; }
 
-        [Required]
+       
         public MovieGenre MovieGenre { get; set; }
+        [Display(Name = "Movie genre")]
         public int MovieGenreId { get; set; }
     }
 }

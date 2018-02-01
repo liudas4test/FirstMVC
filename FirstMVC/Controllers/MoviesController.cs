@@ -41,60 +41,53 @@ namespace FirstMVC.Controllers
 
         public ActionResult New()
         {
-            return View();
+            var movieGenres = _context.MovieGenre.ToList();
+            var viewModel = new NewMovieViewModel
+            {
+                MovieGenres = movieGenres
+            };
+            return View("New",viewModel);
         }
 
-        /*private IEnumerable<Movie> GetMovies()
+        [HttpPost]
+        public ActionResult Save(Movie movie)
         {
-            return new List<Movie>
+            if(movie.Id == 0)
+                _context.Movies.Add(movie);
+            else
             {
-                new Movie { Id = 1, Name = "Shrek" },
-                new Movie { Id = 2, Name = "Wall-e" }
-            };
-        }*/
+                var movieInDb = _context.Movies.Single(c => c.Id == movie.Id);
+                movieInDb.Name = movie.Name;
+                movieInDb.ReleaseDate = movie.ReleaseDate;
+                movieInDb.DateAdded = movie.DateAdded;
+                movieInDb.InStock = movie.InStock;
+                movieInDb.MovieGenreId = movie.MovieGenreId;
+            }
+             _context.SaveChanges();
 
-        // GET: Movies
-        public ActionResult Random()
+             return RedirectToAction("Index", "Movies");
+            
+        }
+
+        public ActionResult Edit(int id)
         {
-            var movie = new Movie() {Name = "Shrek"};
-            var customers = new List<Customer>
-            {
-                new Customer {Name = "Customer_1"},
-                new Customer {Name = "Customer_2"}
-            };
+            var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
+            if (movie == null)
+                return HttpNotFound();
 
-            var viewModel = new RandomMovieViewModel
+            var viewModel = new NewMovieViewModel
             {
                 Movie = movie,
-                Customers = customers
+                MovieGenres = _context.MovieGenre.ToList()
             };
-
-            return View(viewModel);
+            return View("New", viewModel);
         }
 
        
+       
 
-        /*
-        public ActionResult Edit(int id)
-        {
-            return Content("id=" + id);
-        }
+       
 
-        public ActionResult Index(int? pageIndex, string sortBy)
-        {
-            if (!pageIndex.HasValue)
-                pageIndex = 1;
-            if (String.IsNullOrWhiteSpace(sortBy))
-                sortBy = "Name";
-            return Content(String.Format("pageIndex={0}&sortBy={1}", pageIndex, sortBy));
-            
-        }*/
-
-        /*[Route("movies/released/{year}/{month:range(1,12)}")]
-
-        public ActionResult ByReleaseDate(int year, int month)
-        {
-            return Content(year +"/"+ month);
-        }*/
+        
     }
 }

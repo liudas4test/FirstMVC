@@ -1,4 +1,4 @@
-﻿@model FirstMVC.Models.Movie
+﻿@model FirstMVC.ViewModels.NewMovieViewModel
 @{
     /**/
 
@@ -8,24 +8,29 @@
 
 <h2>New Movie</h2>
 
-@using (Html.BeginForm("Create", "Movie"))
+@using (Html.BeginForm("Save", "Movies"))
 {
     <div class="form-group">
-        @Html.LabelFor(m => m.Name)
-        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Movie.Name)
+        @Html.TextBoxFor(m => m.Movie.Name, new { @class = "form-control" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.MovieGenre)
-        @Html.TextBoxFor(m => m.MovieGenre, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Movie.ReleaseDate)
+        @Html.TextBoxFor(m => m.Movie.ReleaseDate, "{0:d MMM yyyy}", new { @class = "form-control" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.ReleaseDate)
-        @Html.TextBoxFor(m => m.ReleaseDate, new { @class = "form-control" }) 
+        @Html.LabelFor(m => m.Movie.DateAdded)
+        @Html.TextBoxFor(m => m.Movie.DateAdded, "{0:d MMM yyyy}", new { @class = "form-control" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.DateAdded)
-        @Html.TextBoxFor(m => m.DateAdded, new { @class = "form-control" }) 
+        @Html.LabelFor(m => m.Movie.InStock)
+        @Html.TextBoxFor(m => m.Movie.InStock, new { @class = "form-control" })
     </div>
-
+    <div class="form-group">
+        @Html.LabelFor(m => m.Movie.MovieGenreId)
+        @Html.DropDownListFor(m => m.Movie.MovieGenreId, new SelectList(Model.MovieGenres, "Id", "Name"), "", new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.Movie.Id)
+    <button type="submit" class="btn btn-primary">Save</button>
 }
 
